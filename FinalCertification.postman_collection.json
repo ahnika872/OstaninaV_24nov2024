@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "40d0b73d-607d-42fe-b9f2-965589b82089",
+		"name": "FinalCertification",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34804085"
+	},
+	"item": [
+		{
+			"name": "Добавить в корзину",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Товар добавлен!\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"idCookie\":\"780423\",\"idProd\":\"373\",\"type\":\"add\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.sibdar-spb.ru/ajax/basketOrder.php",
+					"protocol": "https",
+					"host": [
+						"www",
+						"sibdar-spb",
+						"ru"
+					],
+					"path": [
+						"ajax",
+						"basketOrder.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменить количество",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ты изменил количество товара!\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"idCookie\":\"780423\",\"idProd\":259,\"type\":\"plus\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.sibdar-spb.ru/ajax/basketOrder.php",
+					"protocol": "https",
+					"host": [
+						"www",
+						"sibdar-spb",
+						"ru"
+					],
+					"path": [
+						"ajax",
+						"basketOrder.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Удалили товар!\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"idCookie\":\"780423\",\"idProd\":373,\"type\":\"delete\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.sibdar-spb.ru/ajax/basketOrder.php",
+					"protocol": "https",
+					"host": [
+						"www",
+						"sibdar-spb",
+						"ru"
+					],
+					"path": [
+						"ajax",
+						"basketOrder.php"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "EkAiTm90L0EpQnJhbmQiO3Y9IjgiLCAiQ2hyb21pdW0iO3Y9IjEyNiIsICJHb29nbGUgQ2hyb21lIjt2PSIxMjYiGgUiYXJtIiIQIjEyNi4wLjY0NzguMTgyIioCPzA6ByJtYWNPUyJCCCIxNC41LjAiSgQiNjQiUlsiTm90L0EpQnJhbmQiO3Y9IjguMC4wLjAiLCJDaHJvbWl1bSI7dj0iMTI2LjAuNjQ3OC4xODIiLCJHb29nbGUgQ2hyb21lIjt2PSIxMjYuMC42NDc4LjE4MiIiYP3IjLoG",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
